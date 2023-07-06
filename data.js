@@ -23,61 +23,9 @@ export function pokeOrder(pokeArray, changeOrder) {
   return ordered;
 }
 
-
-
-export function calculoRaridade (pokeArray) {
-
-  const raridadeNormal = (pokeArray.filter(pokemon => pokemon.pokemon-rarity(normal))) / pokeArray * 100;
-  const raridadeLegendary = (pokeArray.filter(pokemon => pokemon.pokemon-rarity(legendary))) / pokeArray * 100;
-  const raridadeMythic = (pokeArray.filter(pokemon => pokemon.pokemon-rarity(mythic))) / pokeArray * 100;
-  return ("A porcentagem de pokemons com raridade normal é de " + raridadeNormal +" porcentos.");
-  return ("A porcentagem de pokemons com raridade legendary é de " + raridadeLegendary +" porcentos.");
-  return ("A porcentagem de pokemons com raridade mythic é de " + raridadeMythic +" porcentos.");
-
-  }
-
-
-
-
-
-/*export function pokeOrder(pokeArray, changeOrder) {
-  const ordered = pokeArray.sort((a, b) => {
-    if (changeOrder === "nameAsc") {
-      if (a.name > b.name) {
-        return 1;
-      }
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
-    } else if (changeOrder === "nameDesc") {
-      if (a.name < b.name) {
-        return 1;
-      }
-      if (a.name > b.name) {
-        return 0;
-      }
-      return 0;
-    } else if (changeOrder === "numberAsc") {
-      if (a.num > b.num) {
-        return 1;
-      }
-      if (a.num < b.num) {
-        return -1;
-      }
-      return 0;
-    } else if (changeOrder === "numberDesc") {
-      if (a.num > b.num) {
-        return -1;
-      }
-      if (a.num < b.num) {
-        return 1;
-      }
-      return 0;
-    }
-  });
-
-  return ordered;
-}*/
-
+export function percentual(valorParcial, valorTotal) {
+  const porcentagem = (valorParcial / valorTotal) * 100;
+  const porcentagemRound = Math.round(porcentagem);
+  return porcentagemRound;
+}
 
